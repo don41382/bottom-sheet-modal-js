@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Bottom Sheet Dialog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+<div class="p-4">
+    <button id="openButton1" class="bg-blue-500 text-white px-4 py-2 rounded" data-content="content1">Open Content 1</button>
+    <button id="openButton2" class="bg-green-500 text-white px-4 py-2 rounded ml-2" data-content="content2">Open Content 2</button>
+    <button id="openButton3" class="bg-red-500 text-white px-4 py-2 rounded ml-2" data-content="content3">Open Content 3</button>
+</div>
+
+<div id="bottomSheet" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden overlay-transition opacity-0">
+    <div id="sheet" class="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-lg sheet-transition" style="transform: translateY(100%);">
+        <div class="w-12 h-1.5 bg-gray-300 rounded-full mx-auto mt-3 mb-5"></div>
+        <div id="sheetContent" class="px-4 pb-4 overflow-y-auto" style="max-height: calc(100vh - 100px);">
+            <!-- Content will be dynamically inserted here -->
+        </div>
+    </div>
+</div>
+
+<template id="content1">
+    <h2 class="text-xl font-bold mb-4">Content 1</h2>
+    <p>This is the first type of content for your bottom sheet dialog.</p>
+</template>
+
+<template id="content2">
+    <h2 class="text-xl font-bold mb-4">Content 2</h2>
+    <p>This is the second type of content. It can be different from the first one.</p>
+    <ul class="list-disc pl-5 mt-2">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</template>
+
+<template id="content3">
+    <h2 class="text-xl font-bold mb-4">Content 3</h2>
+    <p>This is the third type of content. You can put anything here.</p>
+    <div class="mt-4">
+        <input type="text" placeholder="Enter some text" class="border p-2 rounded w-full">
+        <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+    </div>
+</template>
+
+<script type="module" src="./index.js"></script>
+</body>
+</html>
