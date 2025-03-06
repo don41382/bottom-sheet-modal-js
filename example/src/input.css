@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .sheet-transition {
+        transition: transform 0.3s ease-out;
+    }
+
+    .overlay-transition {
+        transition: opacity 0.3s ease-out;
+    }
+}

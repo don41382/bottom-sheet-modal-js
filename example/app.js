@@ -1,5 +1,3 @@
-import BottomSheet from './bottomSheet.js';
-
 document.addEventListener('DOMContentLoaded', () => {
     const bottomSheet = new BottomSheet();
 
