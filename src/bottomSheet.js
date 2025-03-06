@@ -1,9 +1,5 @@
-// bottomSheet.js
-
-import Hammer from 'hammerjs';
-
-// Make Hammer available globally
-window.Hammer = Hammer;
+// src/bottomSheet.js
+import Hammer from "hammerjs";
 
 class BottomSheet {
     constructor(options = {}) {
@@ -37,7 +33,6 @@ class BottomSheet {
         this.initHammer();
         window.addEventListener('resize', () => this.setSheetHeight());
     }
-
 
     setSheetHeight() {
         const maxHeight = window.innerHeight - 100; // 100px from top
@@ -108,4 +103,5 @@ class BottomSheet {
     }
 }
 
-export default BottomSheet;
+// Attach BottomSheet to the global window object
+window.BottomSheet = BottomSheet;
